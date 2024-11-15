@@ -1,282 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br"><head><meta charset="utf-8">
-<meta http-equiv="content-type" content="text/html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html><html lang=pt dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Self-hosting meu web server | dsre.dev</title>
+<meta name=keywords content><meta name=description content="Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.
 
-<title itemprop="name">Self-hosting meu web server | dsre.dev</title>
-<meta property="og:title" content="Self-hosting meu web server | dsre.dev" />
-<meta name="twitter:title" content="Self-hosting meu web server | dsre.dev" />
-<meta itemprop="name" content="Self-hosting meu web server | dsre.dev" />
-<meta name="application-name" content="Self-hosting meu web server | dsre.dev" />
-<meta property="og:site_name" content="" />
-
-<meta name="description" content="Data Scientist &amp; Web Developer">
-<meta itemprop="description" content="Data Scientist &amp; Web Developer" />
-<meta property="og:description" content="Data Scientist &amp; Web Developer" />
-<meta name="twitter:description" content="Data Scientist &amp; Web Developer" />
-
-<meta property="og:locale" content="pt-br" />
-<meta name="language" content="pt-br" />
-
-  <link rel="alternate" hreflang="pt" href="https://dsre.dev/blog/self-hosting/" title="" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.134.2">  <meta property="og:url" content="https://dsre.dev/blog/self-hosting/">
-  <meta property="og:site_name" content="dsre.dev">
-  <meta property="og:title" content="Self-hosting meu web server">
-  <meta property="og:description" content="Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.
-Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente. Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache. Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi: Sam Meech-Ward: Todo desenvolvedor precisa de um RaspberryPi.">
-  <meta property="og:locale" content="pt_br">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2024-09-14T14:12:52-03:00">
-    <meta property="article:modified_time" content="2024-09-14T14:12:52-03:00">
- 
-    
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Self-hosting meu web server">
-  <meta name="twitter:description" content="Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.
-Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente. Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache. Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi: Sam Meech-Ward: Todo desenvolvedor precisa de um RaspberryPi.">
- 
-
-    <link rel="canonical" href="https://dsre.dev/blog/self-hosting/" />
-    <link href="/style.min.b8882fecba0304f1fe032b38f747f2ab56f93c3274c99a3c2c444d49372c46bd.css" rel="stylesheet" />
-    <link
-        href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css"
-        rel="stylesheet"
-    />
-
-     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png"> <link
-    rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png"> <link rel="icon"
-    type="image/png" sizes="16x16" href="/icons/favicon-16x16.png"> <link rel="mask-icon" href="/icons/safari-pinned-tab.svg"> <link
-    rel="shortcut icon" href="/favicon.ico">
-
-    <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8461386780086405"
-        crossorigin="anonymous"
-    ></script>
-
-
-
-
-<link rel="manifest" href="https://dsre.dev/site.webmanifest">
-
-<meta name="msapplication-config" content="/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="theme-color" content="#434648">  <link
-    rel="icon" type="image/svg+xml" href="/icons/favicon.svg">  </head>
-<body data-theme = "" class="notransition">
-
-<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
-
-<div class="navbar" role="navigation">
-    <nav class="menu" aria-label="Main Navigation">
-        <a href="https://dsre.dev/" class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-stroke-linejoin="round" class="feather feather-home">
-<title></title>
-<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-<polyline points="9 22 9 12 15 12 15 22"></polyline>
-</svg>
-        </a>
-        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-        <label for="menu-trigger">
-            <span class="menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
-            </span>
-        </label>
-
-        <div class="trigger">
-            <ul class="trigger-container">
-                
-                
-                <li>
-                    <a class="menu-link " href="/sobre/">
-                        Sobre
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link " href="/blog/">
-                        Blog
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link " href="/projetos/">
-                        Projetos
-                    </a>
-                    
-                </li>
-                
-                <li class="menu-separator">
-                    <span>|</span>
-                </li>
-                
-                
-            </ul>
-            <a id="mode" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-            </a>
-        </div>
-    </nav>
-</div>
-
-<div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-        <article>
-            <header class="header">
-                <h1 class="header-title">Self-hosting meu web server</h1>
-                
-                
-                <div class="post-meta">
-                    <time datetime="2024-09-14T14:12:52-03:00" itemprop="datePublished"> 14 de set. de 2024 </time>
-                </div>
-                
-            </header>
-            
-            <div class="page-content">
-                <p>Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.</p>
-<ol>
-<li>Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente.</li>
-<li>Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache.</li>
-<li>Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi:</li>
-</ol>
-<p>
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Vp4glSVPT8o?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
- <strong>Sam Meech-Ward</strong>: Todo desenvolvedor precisa de um RaspberryPi.</p>
-<p>Claramente isso foi um convite para juntar todo esse conhecimento com a vontade de ter um site próprio e colocar tudo em prática. Dessa forma, encontrei um kit básico de RaspberryPi Zero W na Amazon e decidi tentar. Um aspecto interessante é que esse modelo do RaspberryPi é diferente do modelo que o Sam utiliza no vídeo, pois é um dispositivo mais barato, mais simples, mas que ainda roda um sistema Raspbian, um SO baseado em Debian, em 32 bits.</p>
-<h2 id="configuração-adicional-para-o-wifi">Configuração adicional para o WiFi</h2>
-<p>Claro que tudo não iria funcionar de forma tão simples como os tutoriais ensinam. A instalação do Sistema Operacional no cartão microSD funcionou bem e o dispositivo ligou sem maiores problemas, no entanto, o WiFi não estava funcionando logo de início, como esperado, uma vez que a configuração do WiFi já tinha sido feita durante a instalação do Sistema Operacional no microSD. Mas logo aprendi o universo de configuração do raspberry by utilizando:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo raspi-config
-</span></span></code></pre></div><p><img src="/images/raspi_config.png" alt="raspiconfig"></p>
-<p>A configuração foi bem simples utilizando esse assistente de configuração, então não tive que me aventurar muito com edição manual de arquivos de configuração. Excelente! A próxima etapa foi instalar então um servidor Apache, para que eu pudesse hospedar o meu site na minha rede local. Com o WiFi funcionando e o acesso via SSH já configurado (via instalação do SO no microSD), consegui acessar meu RaspberryPi via SSH diretamente com:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh usuario@pi.local
-</span></span></code></pre></div><p>Lembrando que o <strong>usuário</strong> e o <strong>hostname</strong> (pi) foram configurados durante a instalação do SO no microSD. Dessa forma, todas as etapas a seguir foram realizadas utilizando SSH.</p>
-<h2 id="instalando-e-utilizando-o-apache">Instalando e utilizando o Apache</h2>
-<p>Instalar o Apache em sistemas Debians é relativamente simples, bastando uma atualização dos pacotes seguido do comando de instalação utilizando o <code>apt</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>sudo apt upgrade
-</span></span><span style="display:flex;"><span>sudo apt install apache2
-</span></span></code></pre></div><p>Após a instalação, se tudo ocorreu corretamente, você pode acessar a página inicial padrão do Apache utilizando o endereço <code>hostname.local</code> em seu navegador em seu computador, que é algo semelhante a essa tela:</p>
-<p><img src="/images/apache_default.png" alt="apache_default"></p>
-<p>Para ter seu próprio site no local dessa tela padrão, basta copiar os arquivos de seu website para <code>/var/www/html</code>.</p>
-<h2 id="tópicos-adicionais-sobre-hospedagem">Tópicos Adicionais sobre Hospedagem</h2>
-<p>Tive a oportunidade de explorar muitas outras coisas nesse processo, como por exemplo como utilizar uma ferramenta de criação de sites estáticos chamada <a href="https://gohugo.io/">Hugo</a> para poder criar esse site, com diversos templates, utilizando markdown. Além disso, existe toda uma configuração do Apache que pode ser realizada para hospedar múltiplos sites. E por fim algumas ferramentas para monitorar os logs do Apache e aprender mais sobre as pessoas que estão visitando seu site, como por exemplo o <a href="https://goaccess.io/get-started">GoAccess</a>.</p>
-<h2 id="cloudfare-tunnel-conectar-seu-servidor-com-seu-domínio">Cloudfare Tunnel: Conectar seu servidor com seu domínio</h2>
-<p>Finalmente, para disponibilizar seu website self-hosted para o público, existe uma forma mais simples e segura utilizando o serviço <strong>gratuito</strong> da Cloudfare chamado Cloudfare Tunnels. Você precisa habilitar seu domínio para utilizar a Cloudfare através da configuração de DNS, em seguida instalar um aplicativo da Cloudfare no seu RaspberryPi e, por fim, configurar a conexão no site da Cloudfare. O vídeo do Sam acima explica detalhadamente como esse processo funciona e todas as etapas para realizá-lo. Não tive nenhum problema durante a execução desses passos.</p>
-<h2 id="impressões-pessoais-e-próximos-passos">Impressões Pessoais e Próximos Passos</h2>
-<p>Esse foi um exercício muito interessante que me colocou em contato com diversas ferramentas que eu antes não conhecia.</p>
-<p>É muito interessante que ao se aprender sobre desenvolvimento Web temos contato com muitas ferramentas de desenvolvimento mas pouco aprendemos sobre colocar esses sistemas em produção. Acredito que para ser um desenvolvedor fullstack isso acaba sendo um gargalo e tanto. No curso que tenho feito de pós-graduação e outros cursos de curta duração até tenho visto um pouco sobre github actions, como fazer deploy em docker containers, etc, mas entender do zero como instalar um servidor web e dispobilizar um site estático, indo da configuração do domínio e cuidados com segurança, não é um processo trivial. Felizmente existem ferramentas que facilitam e aceleram o processo, como Cloudfare tunnels, mas que duvido que serão gratuitas para sempre.</p>
-<p>Utilizar um sistema gerador de sites estáticos também foi outra surpresa, comparado com a alternativa de se instalar o Wordpress junto ao servidor Apache. É uma experiência interessante conhecer todos o ecossistema de templates existentes, como configurar um template corretamente e como escrever artigos com extrema facilidade utilizando markdown. Essa foi a opção que escolhi para meu site pessoal, ao invés de desenvolvê-lo do zero.</p>
-<p>Como próximos passos pretendo evoluir o conteúdo desde blog, trazendo guias de estatística e Ciência de Dados que tenho espalhados por outras plataformas e continuar compartilhando alguns pensamentos por aqui.</p>
-<p>Obrigado por ler até o final e um abraço!</p>
-
-            </div>
-        </article></main>
-</div>
-<footer class="footer">
-    <span class="footer_item"> </span>
-    &nbsp;
-
-    <div class="footer_social-icons">
-<a href="https://github.com/dscorzoni" target="_blank" rel="noopener noreferrer me"
-    title="Github">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-</a>
-<a href="https://www.linkedin.com/in/dscorzoni" target="_blank" rel="noopener noreferrer me"
-    title="Linkedin">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-</a>
-<a href="https://bolha.us/@dsre" target="_blank" rel="noopener noreferrer me"
-    title="Mastodon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M21.58 13.913c-.29 1.469-2.592 3.121-5.238 3.396-1.379.184-2.737.368-4.185.276-2.368-.092-4.237-.551-4.237-.551 0 .184.014.459.043.643.308 2.294 2.317 2.478 4.22 2.57 1.922 0 3.633-.46 3.633-.46l.079 1.653s-1.344.734-3.738.918c-1.32.091-2.96-.092-4.869-.551-4.14-1.102-4.853-5.507-4.961-10.005-.034-1.285-.013-2.57-.013-3.58 0-4.589 3-5.966 3-5.966 1.513-.734 4.11-1.01 6.808-1.01h.067c2.699 0 5.296.276 6.81 1.01 0 0 3 1.377 3 5.967 0 0 .037 3.304-.419 5.69"
-        stroke="currentColor" />
-    <path
-        d="M17.832 8.633v5h-1.978V8.78c0-1.023-.43-1.542-1.29-1.542-.95 0-1.427.616-1.427 1.834v2.655H11.17V9.072c0-1.218-.476-1.834-1.427-1.834-.86 0-1.29.52-1.29 1.542v4.852H6.475V8.633c0-1.022.26-1.834.782-2.434.538-.6 1.243-.909 2.118-.909 1.012 0 1.779.39 2.286 1.169l.492.827.493-.827c.507-.78 1.274-1.169 2.286-1.169.875 0 1.58.308 2.118.909.522.6.782 1.412.782 2.434"
-        fill="currentColor" stroke="none" />
-</svg>
-</a>
-<a href="https://bsky.app/profile/dsre.dev" target="_blank" rel="noopener noreferrer me"
-    title="Bluesky">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-    d="M11.999,10.236c0.321,-0.524 0.916,-1.507 1.405,-2.376c0.755,-1.344 1.692,-2.852 2.869,-4.028c1.283,-1.281 2.845,-2.171 4.739,-2.171c1.144,-0 1.864,0.585 2.299,1.497c0.486,1.017 0.545,2.551 0.51,3.883c-0.051,1.945 -0.232,3.337 -0.505,4.275c-0.229,0.786 -0.543,1.303 -0.878,1.615c-0.892,0.833 -1.8,1.263 -2.634,1.484c0.029,0.018 0.056,0.036 0.084,0.055c0.528,0.367 0.823,0.79 1.081,1.107c0.648,0.794 0.644,1.795 0.23,2.784c-0.481,1.151 -1.533,2.279 -2.12,2.773c-1.389,1.171 -2.506,1.362 -3.383,1.133c-0.88,-0.23 -1.59,-0.932 -2.156,-1.826c-0.45,-0.71 -0.817,-1.537 -1.176,-2.186c-0.115,-0.208 -0.302,-0.455 -0.406,-0.587c-0.02,0.019 -0.04,0.04 -0.056,0.058c-0.121,0.145 -0.234,0.328 -0.349,0.531c-0.363,0.644 -0.721,1.463 -1.157,2.166c-0.555,0.895 -1.252,1.597 -2.12,1.825c-0.863,0.227 -1.97,0.037 -3.363,-1.136c-0.586,-0.494 -1.638,-1.622 -2.119,-2.773c-0.414,-0.989 -0.418,-1.99 0.229,-2.784c0.258,-0.317 0.554,-0.74 1.082,-1.106c0.027,-0.019 0.055,-0.038 0.084,-0.056c-0.834,-0.221 -1.742,-0.651 -2.634,-1.484c-0.335,-0.312 -0.649,-0.829 -0.878,-1.615c-0.273,-0.938 -0.454,-2.33 -0.505,-4.275c-0.036,-1.332 0.024,-2.866 0.509,-3.883c0.435,-0.912 1.156,-1.497 2.3,-1.497c2.32,0 4.109,1.203 5.494,2.808c1.272,1.474 2.195,3.283 2.9,4.643c0.231,0.447 0.436,0.84 0.624,1.146Zm-0.01,5.653l0.296,0.031l0.271,0.086c0.208,0.088 0.413,0.229 0.607,0.428c0.455,0.467 0.882,1.369 1.36,2.284c0.249,0.477 0.518,0.958 0.841,1.339c0.231,0.274 0.483,0.502 0.805,0.569c0.488,0.103 1.052,-0.157 1.811,-0.797c0.452,-0.38 1.274,-1.239 1.645,-2.126c0.155,-0.371 0.265,-0.75 0.022,-1.048c-0.179,-0.22 -0.366,-0.529 -0.732,-0.783c-0.536,-0.372 -1.356,-0.51 -1.905,-0.654c-0.405,-0.106 -0.715,-0.234 -0.88,-0.355l-0.284,-0.303l-0.135,-0.367l-0.008,-0.211l0.035,-0.196l0.078,-0.195l0.142,-0.209l0.198,-0.181l0.296,-0.154c0.151,-0.055 0.348,-0.092 0.587,-0.104c0.815,-0.042 2.571,0.294 4.235,-1.259c0.171,-0.159 0.288,-0.445 0.404,-0.845c0.246,-0.843 0.391,-2.096 0.438,-3.843c0.024,-0.91 0.026,-1.938 -0.208,-2.738c-0.142,-0.486 -0.367,-0.891 -0.896,-0.891c-1.675,0 -2.974,0.983 -4.031,2.21c-1.179,1.369 -2.058,3.057 -2.752,4.321c-0.483,0.88 -0.902,1.573 -1.25,1.916c-0.088,0.086 -0.174,0.157 -0.257,0.214l-0.221,0.125l-0.228,0.078l-0.267,0.031l-0.274,-0.034l-0.231,-0.083l-0.219,-0.132c-0.081,-0.058 -0.164,-0.131 -0.248,-0.22c-0.327,-0.343 -0.718,-1.037 -1.174,-1.917c-0.654,-1.262 -1.497,-2.948 -2.676,-4.314c-1.067,-1.236 -2.417,-2.217 -4.203,-2.217c-0.53,0 -0.754,0.405 -0.896,0.891c-0.234,0.8 -0.232,1.828 -0.208,2.738c0.046,1.747 0.192,3 0.438,3.843c0.116,0.4 0.233,0.686 0.403,0.845c1.665,1.553 3.421,1.217 4.235,1.259c0.24,0.012 0.437,0.049 0.588,0.104l0.295,0.154l0.199,0.181l0.142,0.209l0.078,0.195l0.035,0.196l-0.009,0.211l-0.135,0.368l-0.283,0.303c-0.165,0.12 -0.476,0.248 -0.88,0.355c-0.549,0.144 -1.369,0.281 -1.905,0.653c-0.366,0.254 -0.554,0.564 -0.732,0.783c-0.243,0.298 -0.133,0.677 0.022,1.048c0.371,0.887 1.193,1.746 1.645,2.127c0.757,0.637 1.311,0.9 1.789,0.8c0.311,-0.066 0.55,-0.29 0.772,-0.557c0.315,-0.381 0.577,-0.86 0.822,-1.337c0.394,-0.763 0.752,-1.521 1.138,-2.01c0.431,-0.544 0.929,-0.815 1.455,-0.815Z" style="fill-rule:nonzero;"/>
-</svg>
-</a>
-<a href="https://www.frontendmentor.io/profile/dscorzoni" target="_blank" rel="noopener noreferrer me"
-    title="Frontendmentor">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-</svg>
-</a>
-<a href="https://www.researchgate.net/profile/Danilo-Re" target="_blank" rel="noopener noreferrer me"
-    title="Researchgate">
-    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none"
-    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z" />
-</svg>
-</a>
-<a href="https://www.youtube.com/c/Pr%C3%A1ticadeDados" target="_blank" rel="noopener noreferrer me"
-    title="Youtube">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
-    </path>
-    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-</svg>
-</a>
-</div>
-    <small class="footer_copyright">
-        © 2024 Danilo Scorzoni Ré.
-        
-    </small>
-</footer>
-
-
-
-
+Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente.
+Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache.
+Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi:
 
 
 
     
-    <script src="https://dsre.dev/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js" integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script>
+    
+      
+    
+ Sam Meech-Ward: Todo desenvolvedor precisa de um RaspberryPi."><meta name=author content="Danilo Scorzoni Ré"><link rel=canonical href=https://pessoal.dsre.dev/blog/self-hosting/><meta name=msvalidate.01 content="EB3E11732C95347992D26E865A944A45"><link crossorigin=anonymous href=/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as=style><link rel=icon href=https://pessoal.dsre.dev/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://pessoal.dsre.dev/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://pessoal.dsre.dev/favicon-32x32.png><link rel=apple-touch-icon href=https://pessoal.dsre.dev/apple-touch-icon.png><link rel=mask-icon href=https://pessoal.dsre.dev/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=pt href=https://pessoal.dsre.dev/blog/self-hosting/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://pessoal.dsre.dev/blog/self-hosting/"><meta property="og:site_name" content="dsre.dev"><meta property="og:title" content="Self-hosting meu web server"><meta property="og:description" content="Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.
+Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente. Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache. Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi: Sam Meech-Ward: Todo desenvolvedor precisa de um RaspberryPi."><meta property="og:locale" content="pt-br"><meta property="og:type" content="article"><meta property="article:section" content="blog"><meta property="article:published_time" content="2024-09-14T14:12:52-03:00"><meta property="article:modified_time" content="2024-09-14T14:12:52-03:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Self-hosting meu web server"><meta name=twitter:description content="Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.
+
+Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente.
+Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache.
+Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi:
+
+
 
     
-
-</body>
-</html>
+    
+      
+    
+ Sam Meech-Ward: Todo desenvolvedor precisa de um RaspberryPi."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blogs","item":"https://pessoal.dsre.dev/blog/"},{"@type":"ListItem","position":2,"name":"Self-hosting meu web server","item":"https://pessoal.dsre.dev/blog/self-hosting/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Self-hosting meu web server","name":"Self-hosting meu web server","description":"Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.\nEu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente. Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache. Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi: Sam Meech-Ward: Todo desenvolvedor precisa de um RaspberryPi.\n","keywords":[],"articleBody":"Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.\nEu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente. Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache. Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi: Sam Meech-Ward: Todo desenvolvedor precisa de um RaspberryPi.\nClaramente isso foi um convite para juntar todo esse conhecimento com a vontade de ter um site próprio e colocar tudo em prática. Dessa forma, encontrei um kit básico de RaspberryPi Zero W na Amazon e decidi tentar. Um aspecto interessante é que esse modelo do RaspberryPi é diferente do modelo que o Sam utiliza no vídeo, pois é um dispositivo mais barato, mais simples, mas que ainda roda um sistema Raspbian, um SO baseado em Debian, em 32 bits.\nConfiguração adicional para o WiFi Claro que tudo não iria funcionar de forma tão simples como os tutoriais ensinam. A instalação do Sistema Operacional no cartão microSD funcionou bem e o dispositivo ligou sem maiores problemas, no entanto, o WiFi não estava funcionando logo de início, como esperado, uma vez que a configuração do WiFi já tinha sido feita durante a instalação do Sistema Operacional no microSD. Mas logo aprendi o universo de configuração do raspberry by utilizando:\nsudo raspi-config A configuração foi bem simples utilizando esse assistente de configuração, então não tive que me aventurar muito com edição manual de arquivos de configuração. Excelente! A próxima etapa foi instalar então um servidor Apache, para que eu pudesse hospedar o meu site na minha rede local. Com o WiFi funcionando e o acesso via SSH já configurado (via instalação do SO no microSD), consegui acessar meu RaspberryPi via SSH diretamente com:\nssh usuario@pi.local Lembrando que o usuário e o hostname (pi) foram configurados durante a instalação do SO no microSD. Dessa forma, todas as etapas a seguir foram realizadas utilizando SSH.\nInstalando e utilizando o Apache Instalar o Apache em sistemas Debians é relativamente simples, bastando uma atualização dos pacotes seguido do comando de instalação utilizando o apt:\nsudo apt update sudo apt upgrade sudo apt install apache2 Após a instalação, se tudo ocorreu corretamente, você pode acessar a página inicial padrão do Apache utilizando o endereço hostname.local em seu navegador em seu computador, que é algo semelhante a essa tela:\nPara ter seu próprio site no local dessa tela padrão, basta copiar os arquivos de seu website para /var/www/html.\nTópicos Adicionais sobre Hospedagem Tive a oportunidade de explorar muitas outras coisas nesse processo, como por exemplo como utilizar uma ferramenta de criação de sites estáticos chamada Hugo para poder criar esse site, com diversos templates, utilizando markdown. Além disso, existe toda uma configuração do Apache que pode ser realizada para hospedar múltiplos sites. E por fim algumas ferramentas para monitorar os logs do Apache e aprender mais sobre as pessoas que estão visitando seu site, como por exemplo o GoAccess.\nCloudfare Tunnel: Conectar seu servidor com seu domínio Finalmente, para disponibilizar seu website self-hosted para o público, existe uma forma mais simples e segura utilizando o serviço gratuito da Cloudfare chamado Cloudfare Tunnels. Você precisa habilitar seu domínio para utilizar a Cloudfare através da configuração de DNS, em seguida instalar um aplicativo da Cloudfare no seu RaspberryPi e, por fim, configurar a conexão no site da Cloudfare. O vídeo do Sam acima explica detalhadamente como esse processo funciona e todas as etapas para realizá-lo. Não tive nenhum problema durante a execução desses passos.\nImpressões Pessoais e Próximos Passos Esse foi um exercício muito interessante que me colocou em contato com diversas ferramentas que eu antes não conhecia.\nÉ muito interessante que ao se aprender sobre desenvolvimento Web temos contato com muitas ferramentas de desenvolvimento mas pouco aprendemos sobre colocar esses sistemas em produção. Acredito que para ser um desenvolvedor fullstack isso acaba sendo um gargalo e tanto. No curso que tenho feito de pós-graduação e outros cursos de curta duração até tenho visto um pouco sobre github actions, como fazer deploy em docker containers, etc, mas entender do zero como instalar um servidor web e dispobilizar um site estático, indo da configuração do domínio e cuidados com segurança, não é um processo trivial. Felizmente existem ferramentas que facilitam e aceleram o processo, como Cloudfare tunnels, mas que duvido que serão gratuitas para sempre.\nUtilizar um sistema gerador de sites estáticos também foi outra surpresa, comparado com a alternativa de se instalar o Wordpress junto ao servidor Apache. É uma experiência interessante conhecer todos o ecossistema de templates existentes, como configurar um template corretamente e como escrever artigos com extrema facilidade utilizando markdown. Essa foi a opção que escolhi para meu site pessoal, ao invés de desenvolvê-lo do zero.\nComo próximos passos pretendo evoluir o conteúdo desde blog, trazendo guias de estatística e Ciência de Dados que tenho espalhados por outras plataformas e continuar compartilhando alguns pensamentos por aqui.\nObrigado por ler até o final e um abraço!\n","wordCount":"958","inLanguage":"pt","datePublished":"2024-09-14T14:12:52-03:00","dateModified":"2024-09-14T14:12:52-03:00","author":{"@type":"Person","name":"Danilo Scorzoni Ré"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://pessoal.dsre.dev/blog/self-hosting/"},"publisher":{"@type":"Organization","name":"dsre.dev","logo":{"@type":"ImageObject","url":"https://pessoal.dsre.dev/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://pessoal.dsre.dev/ accesskey=h title="dsre.dev (Alt + H)">dsre.dev</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://pessoal.dsre.dev/sobre/ title=Sobre><span>Sobre</span></a></li><li><a href=https://pessoal.dsre.dev/blog/ title=Blog><span>Blog</span></a></li><li><a href=https://pessoal.dsre.dev/curriculo/ title=Currículo><span>Currículo</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">Self-hosting meu web server</h1><div class=post-meta><span title='2024-09-14 14:12:52 -0300 -03'>14 de setembro, 2024</span>&nbsp;·&nbsp;5 minutos&nbsp;·&nbsp;958 palavras&nbsp;·&nbsp;Danilo Scorzoni Ré</div></header><div class=post-content><p>Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.</p><ol><li>Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente.</li><li>Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache.</li><li>Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi:</li></ol><p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading=eager referrerpolicy=strict-origin-when-cross-origin src="https://www.youtube.com/embed/Vp4glSVPT8o?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 title="YouTube video"></iframe></div><strong>Sam Meech-Ward</strong>: Todo desenvolvedor precisa de um RaspberryPi.</p><p>Claramente isso foi um convite para juntar todo esse conhecimento com a vontade de ter um site próprio e colocar tudo em prática. Dessa forma, encontrei um kit básico de RaspberryPi Zero W na Amazon e decidi tentar. Um aspecto interessante é que esse modelo do RaspberryPi é diferente do modelo que o Sam utiliza no vídeo, pois é um dispositivo mais barato, mais simples, mas que ainda roda um sistema Raspbian, um SO baseado em Debian, em 32 bits.</p><h2 id=configuração-adicional-para-o-wifi>Configuração adicional para o WiFi<a hidden class=anchor aria-hidden=true href=#configuração-adicional-para-o-wifi>#</a></h2><p>Claro que tudo não iria funcionar de forma tão simples como os tutoriais ensinam. A instalação do Sistema Operacional no cartão microSD funcionou bem e o dispositivo ligou sem maiores problemas, no entanto, o WiFi não estava funcionando logo de início, como esperado, uma vez que a configuração do WiFi já tinha sido feita durante a instalação do Sistema Operacional no microSD. Mas logo aprendi o universo de configuração do raspberry by utilizando:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>sudo raspi-config
+</span></span></code></pre></div><p><img alt=raspiconfig loading=lazy src=/images/raspi_config.png></p><p>A configuração foi bem simples utilizando esse assistente de configuração, então não tive que me aventurar muito com edição manual de arquivos de configuração. Excelente! A próxima etapa foi instalar então um servidor Apache, para que eu pudesse hospedar o meu site na minha rede local. Com o WiFi funcionando e o acesso via SSH já configurado (via instalação do SO no microSD), consegui acessar meu RaspberryPi via SSH diretamente com:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>ssh usuario@pi.local
+</span></span></code></pre></div><p>Lembrando que o <strong>usuário</strong> e o <strong>hostname</strong> (pi) foram configurados durante a instalação do SO no microSD. Dessa forma, todas as etapas a seguir foram realizadas utilizando SSH.</p><h2 id=instalando-e-utilizando-o-apache>Instalando e utilizando o Apache<a hidden class=anchor aria-hidden=true href=#instalando-e-utilizando-o-apache>#</a></h2><p>Instalar o Apache em sistemas Debians é relativamente simples, bastando uma atualização dos pacotes seguido do comando de instalação utilizando o <code>apt</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>sudo apt update
+</span></span><span class=line><span class=cl>sudo apt upgrade
+</span></span><span class=line><span class=cl>sudo apt install apache2
+</span></span></code></pre></div><p>Após a instalação, se tudo ocorreu corretamente, você pode acessar a página inicial padrão do Apache utilizando o endereço <code>hostname.local</code> em seu navegador em seu computador, que é algo semelhante a essa tela:</p><p><img alt=apache_default loading=lazy src=/images/apache_default.png></p><p>Para ter seu próprio site no local dessa tela padrão, basta copiar os arquivos de seu website para <code>/var/www/html</code>.</p><h2 id=tópicos-adicionais-sobre-hospedagem>Tópicos Adicionais sobre Hospedagem<a hidden class=anchor aria-hidden=true href=#tópicos-adicionais-sobre-hospedagem>#</a></h2><p>Tive a oportunidade de explorar muitas outras coisas nesse processo, como por exemplo como utilizar uma ferramenta de criação de sites estáticos chamada <a href=https://gohugo.io/>Hugo</a> para poder criar esse site, com diversos templates, utilizando markdown. Além disso, existe toda uma configuração do Apache que pode ser realizada para hospedar múltiplos sites. E por fim algumas ferramentas para monitorar os logs do Apache e aprender mais sobre as pessoas que estão visitando seu site, como por exemplo o <a href=https://goaccess.io/get-started>GoAccess</a>.</p><h2 id=cloudfare-tunnel-conectar-seu-servidor-com-seu-domínio>Cloudfare Tunnel: Conectar seu servidor com seu domínio<a hidden class=anchor aria-hidden=true href=#cloudfare-tunnel-conectar-seu-servidor-com-seu-domínio>#</a></h2><p>Finalmente, para disponibilizar seu website self-hosted para o público, existe uma forma mais simples e segura utilizando o serviço <strong>gratuito</strong> da Cloudfare chamado Cloudfare Tunnels. Você precisa habilitar seu domínio para utilizar a Cloudfare através da configuração de DNS, em seguida instalar um aplicativo da Cloudfare no seu RaspberryPi e, por fim, configurar a conexão no site da Cloudfare. O vídeo do Sam acima explica detalhadamente como esse processo funciona e todas as etapas para realizá-lo. Não tive nenhum problema durante a execução desses passos.</p><h2 id=impressões-pessoais-e-próximos-passos>Impressões Pessoais e Próximos Passos<a hidden class=anchor aria-hidden=true href=#impressões-pessoais-e-próximos-passos>#</a></h2><p>Esse foi um exercício muito interessante que me colocou em contato com diversas ferramentas que eu antes não conhecia.</p><p>É muito interessante que ao se aprender sobre desenvolvimento Web temos contato com muitas ferramentas de desenvolvimento mas pouco aprendemos sobre colocar esses sistemas em produção. Acredito que para ser um desenvolvedor fullstack isso acaba sendo um gargalo e tanto. No curso que tenho feito de pós-graduação e outros cursos de curta duração até tenho visto um pouco sobre github actions, como fazer deploy em docker containers, etc, mas entender do zero como instalar um servidor web e dispobilizar um site estático, indo da configuração do domínio e cuidados com segurança, não é um processo trivial. Felizmente existem ferramentas que facilitam e aceleram o processo, como Cloudfare tunnels, mas que duvido que serão gratuitas para sempre.</p><p>Utilizar um sistema gerador de sites estáticos também foi outra surpresa, comparado com a alternativa de se instalar o Wordpress junto ao servidor Apache. É uma experiência interessante conhecer todos o ecossistema de templates existentes, como configurar um template corretamente e como escrever artigos com extrema facilidade utilizando markdown. Essa foi a opção que escolhi para meu site pessoal, ao invés de desenvolvê-lo do zero.</p><p>Como próximos passos pretendo evoluir o conteúdo desde blog, trazendo guias de estatística e Ciência de Dados que tenho espalhados por outras plataformas e continuar compartilhando alguns pensamentos por aqui.</p><p>Obrigado por ler até o final e um abraço!</p></div><footer class=post-footer><ul class=post-tags></ul></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://pessoal.dsre.dev/>dsre.dev</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

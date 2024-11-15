@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blogs on dsre.dev</title>
-    <link>https://dsre.dev/blog/</link>
+    <link>https://pessoal.dsre.dev/blog/</link>
     <description>Recent content in Blogs on dsre.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.134.2</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 14 Sep 2024 14:12:52 -0300</lastBuildDate><atom:link href="https://dsre.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Sep 2024 14:12:52 -0300</lastBuildDate>
+    <atom:link href="https://pessoal.dsre.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self-hosting meu web server</title>
-      <link>https://dsre.dev/blog/self-hosting/</link>
+      <link>https://pessoal.dsre.dev/blog/self-hosting/</link>
       <pubDate>Sat, 14 Sep 2024 14:12:52 -0300</pubDate>
-      
-      <guid>https://dsre.dev/blog/self-hosting/</guid>
-      
+      <guid>https://pessoal.dsre.dev/blog/self-hosting/</guid>
       <description>&lt;p&gt;Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente.&lt;/li&gt;
@@ -28,8 +27,6 @@
       &gt;&lt;/iframe&gt;
     &lt;/div&gt;
  &lt;strong&gt;Sam Meech-Ward&lt;/strong&gt;: Todo desenvolvedor precisa de um RaspberryPi.&lt;/p&gt;</description>
-      
     </item>
-    
   </channel>
 </rss>

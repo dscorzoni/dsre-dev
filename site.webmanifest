@@ -1,7 +1,7 @@
 {
     "name": "dsre.dev",
     "short_name": "dsre.dev",
-    "start_url": "https://dsre.dev/",
+    "start_url": "http://localhost:1313/",
     "theme_color": "#434648",
     "background_color": "#ffffff",
     "display": "standalone",
