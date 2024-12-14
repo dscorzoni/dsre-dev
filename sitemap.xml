@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pessoal.dsre.dev/curriculo/</loc>
+    <loc>https://dsre.dev/curriculo/</loc>
     <lastmod>2024-11-15T13:14:59-03:00</lastmod>
   </url><url>
-    <loc>https://pessoal.dsre.dev/</loc>
+    <loc>https://dsre.dev/</loc>
     <lastmod>2024-11-15T13:14:59-03:00</lastmod>
   </url><url>
-    <loc>https://pessoal.dsre.dev/blog/</loc>
+    <loc>https://dsre.dev/blog/</loc>
     <lastmod>2024-09-14T14:12:52-03:00</lastmod>
   </url><url>
-    <loc>https://pessoal.dsre.dev/blog/self-hosting/</loc>
+    <loc>https://dsre.dev/blog/self-hosting/</loc>
     <lastmod>2024-09-14T14:12:52-03:00</lastmod>
   </url><url>
-    <loc>https://pessoal.dsre.dev/projetos/</loc>
+    <loc>https://dsre.dev/projetos/</loc>
     <lastmod>2024-09-12T17:13:42-03:00</lastmod>
   </url><url>
-    <loc>https://pessoal.dsre.dev/sobre/</loc>
+    <loc>https://dsre.dev/sobre/</loc>
     <lastmod>2024-09-12T14:14:59-03:00</lastmod>
   </url><url>
-    <loc>https://pessoal.dsre.dev/categories/</loc>
+    <loc>https://dsre.dev/categories/</loc>
   </url><url>
-    <loc>https://pessoal.dsre.dev/tags/</loc>
+    <loc>https://dsre.dev/tags/</loc>
   </url>
 </urlset>
