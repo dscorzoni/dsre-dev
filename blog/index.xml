@@ -6,27 +6,86 @@
     <description>Recent content in Blogs on dsre.dev</description>
     <generator>Hugo -- 0.134.2</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 14 Sep 2024 14:12:52 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dsre.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Self-hosting meu web server</title>
-      <link>https://dsre.dev/blog/self-hosting/</link>
-      <pubDate>Sat, 14 Sep 2024 14:12:52 -0300</pubDate>
-      <guid>https://dsre.dev/blog/self-hosting/</guid>
-      <description>&lt;p&gt;Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente.&lt;/li&gt;
-&lt;li&gt;Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache.&lt;/li&gt;
-&lt;li&gt;Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-    
-    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Vp4glSVPT8o?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      <title>Carregando dados do Excel e CSV</title>
+      <link>https://dsre.dev/blog/05-carregando-dados-csv-excel/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://dsre.dev/blog/05-carregando-dados-csv-excel/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/-BST5xCFBrQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
       &gt;&lt;/iframe&gt;
     &lt;/div&gt;
- &lt;strong&gt;Sam Meech-Ward&lt;/strong&gt;: Todo desenvolvedor precisa de um RaspberryPi.&lt;/p&gt;</description>
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Neste artigo vamos ver como carregar dados externos no R, seja por arquivos separados por vírgula (.csv - Comma Separated Values) ou por arquivos do Excel (.xlsx). Vamos começar criando um arquivo no Google Sheets para facilitar o acompanhamento deste tutorial:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Filtros em vetores e data frames</title>
+      <link>https://dsre.dev/blog/04-filtros-vetores-data-frames/</link>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://dsre.dev/blog/04-filtros-vetores-data-frames/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/BOCiRXnRbl8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;filtro-em-vetores&#34;&gt;Filtro em vetores&lt;/h2&gt;
+&lt;p&gt;Os operadores lógicos podem ser utilizados para filtrar vetores e data frames. Para entender de maneira simples como eles funcionam, vamos criar um vetor de números e testar quais deles são maiores que 10:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vetor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vetor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;[1]&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;  &lt;span class=&#34;kc&#34;&gt;TRUE&lt;/span&gt;  &lt;span class=&#34;kc&#34;&gt;TRUE&lt;/span&gt;  &lt;span class=&#34;kc&#34;&gt;TRUE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Quando utilizamos a expressão &lt;code&gt;vetor &amp;gt; 10&lt;/code&gt;, o R faz um teste lógico com cada elemento do vetor e checa se o número é maior que 10. Quando verdadeiro, ele retorna &lt;code&gt;TRUE&lt;/code&gt; e quando falso ele retorna &lt;code&gt;FALSE&lt;/code&gt;. É possível utilizar esse conjunto de &lt;code&gt;TRUE&lt;/code&gt;/&lt;code&gt;FALSE&lt;/code&gt; para realizar filtros no próprio vetor, quando colocado essa expressão entre colchetes. Veja o exemplo:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Funções de Agregação em Vetores/Data Frames</title>
+      <link>https://dsre.dev/blog/03-funcoes-agregacao/</link>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://dsre.dev/blog/03-funcoes-agregacao/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.&lt;/p&gt;
+&lt;h2 id=&#34;revisando-vetores&#34;&gt;Revisando Vetores&lt;/h2&gt;
+&lt;p&gt;A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função &lt;code&gt;c()&lt;/code&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dados, vetores e data-frames</title>
+      <link>https://dsre.dev/blog/02-dados-vetores-data-frames/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://dsre.dev/blog/02-dados-vetores-data-frames/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/LC9bbcIzUaE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Neste artigo vamos entender:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Como utilizar o R como uma calculadora?&lt;/li&gt;
+&lt;li&gt;Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?&lt;/li&gt;
+&lt;li&gt;O que são vetores e data-frames?&lt;/li&gt;
+&lt;li&gt;Como filtrar linhas e colunas em data-frames?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;o-r-como-uma-calculadora&#34;&gt;O R como uma calculadora&lt;/h2&gt;
+&lt;p&gt;A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3+3 e der enter, verá o seguinte resultado:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introdução ao R</title>
+      <link>https://dsre.dev/blog/01-introducao-ao-r/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://dsre.dev/blog/01-introducao-ao-r/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qD2hdd5A00I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

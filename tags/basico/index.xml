@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>dsre.dev</title>
-    <link>https://dsre.dev/</link>
-    <description>Recent content on dsre.dev</description>
+    <title>Basico on dsre.dev</title>
+    <link>https://dsre.dev/tags/basico/</link>
+    <description>Recent content in Basico on dsre.dev</description>
     <generator>Hugo -- 0.134.2</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 15 Nov 2024 13:14:59 -0300</lastBuildDate>
-    <atom:link href="https://dsre.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Danilo Scorzoni Ré</title>
-      <link>https://dsre.dev/curriculo/</link>
-      <pubDate>Fri, 15 Nov 2024 13:14:59 -0300</pubDate>
-      <guid>https://dsre.dev/curriculo/</guid>
-      <description>&lt;p&gt;Cientista de Dados generalista, com 12 anos de experiência nas áreas de Tecnologia e Serviços Financeiros. Mestre em Ciência Florestal, Especialista em Inteligência Analítica. Atualmente morando em São Paulo/SP.&lt;/p&gt;
-&lt;h2 id=&#34;experiência&#34;&gt;Experiência&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Meta/Facebook - Research Scientist - Commerce &amp;amp; Business Messaging&lt;/strong&gt;
-&lt;em&gt;(Fevereiro 2020 - Novembro 2023) Nova Iorque/EUA&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Desenvolvimento de estudos analíticos e testes de produto para avaliar o valor de negócio nas plataformas de e-commerce do Instagram, Facebook e WhatsApp. Suporte à estratégia dos times de produto, parcerias, vendas e marketing utilizando testes A/B e métodos de inferência causal.&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dsre.dev/tags/basico/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Carregando dados do Excel e CSV</title>
       <link>https://dsre.dev/blog/05-carregando-dados-csv-excel/</link>
@@ -97,17 +86,6 @@
 
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Olá,</title>
-      <link>https://dsre.dev/sobre/</link>
-      <pubDate>Thu, 12 Sep 2024 14:14:59 -0300</pubDate>
-      <guid>https://dsre.dev/sobre/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Olá!&#34; loading=&#34;lazy&#34; src=&#34;https://dsre.dev/sobre/danilo_coliseu.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Me chamo &lt;strong&gt;Danilo Scorzoni Ré&lt;/strong&gt; e esse é o meu portfolio de projetos e site pessoal.&lt;/p&gt;
-&lt;p&gt;Aqui você irá encontrar algumas informações sobre mim, minha experiência profissional, tecnologias que domino e alguns dos meus projetos.&lt;/p&gt;
-&lt;h2 id=&#34;cientista-de-dados&#34;&gt;Cientista de Dados&lt;/h2&gt;
-&lt;p&gt;Sou engenheiro florestal por formação mas atuo há mais de 12 anos na área de Ciência de Dados nos ramos de tecnologia e serviços financeiros. Passei por empresas como Serasa Experian, Facebook e Instagram, no Brasil e nos Estados Unidos.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
