@@ -6,8 +6,17 @@
     <description>Recent content in Blogs on dsre.dev</description>
     <generator>Hugo -- 0.134.2</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Dec 2024 14:12:52 -0300</lastBuildDate>
     <atom:link href="https://dsre.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FlashIt! Uma ferramenta para criação rápida de Flashcards</title>
+      <link>https://dsre.dev/blog/06-flashit/</link>
+      <pubDate>Sun, 15 Dec 2024 14:12:52 -0300</pubDate>
+      <guid>https://dsre.dev/blog/06-flashit/</guid>
+      <description>&lt;p&gt;Em meus estudos para concurso me deparei com uma ferramenta antiga que auxilia na memorização de conceitos desde a época de escola. Mais popular nos Estados Unidos do que no Brasil, os flashcards ajudam a memorização através da repetição.&lt;/p&gt;
+&lt;h2 id=&#34;o-que-são-flashcards&#34;&gt;O que são Flashcards?&lt;/h2&gt;
+&lt;p&gt;Os flashcards são comumentes construídos no formato de um cartão com a pergunta em uma face e a resposta no verso. Para o processo de memorização, você vê primeiro a pergunta, tenta acertar a resposta e depois confere no verso do cartão. Essa técnica é muito útil para concursos públicos pois permite você revisitar os cartões múltiplas vezes com uma certa cadência, até que você esteja acertando 100% a resposta daquele cartão. À medida que você acerta, você pode revisitar aquele cartão com menor frequência.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Carregando dados do Excel e CSV</title>
       <link>https://dsre.dev/blog/05-carregando-dados-csv-excel/</link>

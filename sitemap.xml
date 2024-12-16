@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dsre.dev/blog/</loc>
+    <lastmod>2024-12-15T14:12:52-03:00</lastmod>
+  </url><url>
+    <loc>https://dsre.dev/</loc>
+    <lastmod>2024-12-15T14:12:52-03:00</lastmod>
+  </url><url>
+    <loc>https://dsre.dev/blog/06-flashit/</loc>
+    <lastmod>2024-12-15T14:12:52-03:00</lastmod>
+  </url><url>
     <loc>https://dsre.dev/curriculo/</loc>
     <lastmod>2024-11-15T13:14:59-03:00</lastmod>
   </url><url>
-    <loc>https://dsre.dev/</loc>
-    <lastmod>2024-11-15T13:14:59-03:00</lastmod>
-  </url><url>
     <loc>https://dsre.dev/tags/basico/</loc>
-    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dsre.dev/blog/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dsre.dev/blog/05-carregando-dados-csv-excel/</loc>
