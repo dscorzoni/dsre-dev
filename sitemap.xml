@@ -8,7 +8,7 @@
     <loc>https://dsre.dev/</loc>
     <lastmod>2024-12-15T14:12:52-03:00</lastmod>
   </url><url>
-    <loc>https://dsre.dev/blog/06-flashit/</loc>
+    <loc>https://dsre.dev/blog/02-flashit/</loc>
     <lastmod>2024-12-15T14:12:52-03:00</lastmod>
   </url><url>
     <loc>https://dsre.dev/curriculo/</loc>
@@ -17,7 +17,7 @@
     <loc>https://dsre.dev/tags/basico/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dsre.dev/blog/05-carregando-dados-csv-excel/</loc>
+    <loc>https://dsre.dev/pratica/05-carregando-dados-csv-excel/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dsre.dev/tags/excel/</loc>
@@ -26,20 +26,26 @@
     <loc>https://dsre.dev/tags/google-sheets/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://dsre.dev/pratica/</loc>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dsre.dev/tags/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dsre.dev/blog/04-filtros-vetores-data-frames/</loc>
+    <loc>https://dsre.dev/pratica/04-filtros-vetores-data-frames/</loc>
     <lastmod>2024-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dsre.dev/blog/03-funcoes-agregacao/</loc>
+    <loc>https://dsre.dev/pratica/03-funcoes-agregacao/</loc>
     <lastmod>2024-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dsre.dev/blog/02-dados-vetores-data-frames/</loc>
+    <loc>https://dsre.dev/pratica/02-dados-vetores-data-frames/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dsre.dev/blog/01-introducao-ao-r/</loc>
+    <loc>https://dsre.dev/pratica/01-introducao-ao-r/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dsre.dev/blog/01-self-hosting/self-hosting/</loc>
+    <lastmod>2024-09-14T14:12:52-03:00</lastmod>
   </url><url>
     <loc>https://dsre.dev/projetos/</loc>
     <lastmod>2024-09-12T17:13:42-03:00</lastmod>

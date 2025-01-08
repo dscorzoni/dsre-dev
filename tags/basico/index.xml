@@ -10,9 +10,9 @@
     <atom:link href="https://dsre.dev/tags/basico/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Carregando dados do Excel e CSV</title>
-      <link>https://dsre.dev/blog/05-carregando-dados-csv-excel/</link>
+      <link>https://dsre.dev/pratica/05-carregando-dados-csv-excel/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://dsre.dev/blog/05-carregando-dados-csv-excel/</guid>
+      <guid>https://dsre.dev/pratica/05-carregando-dados-csv-excel/</guid>
       <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/-BST5xCFBrQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
       &gt;&lt;/iframe&gt;
@@ -23,9 +23,9 @@
     </item>
     <item>
       <title>Filtros em vetores e data frames</title>
-      <link>https://dsre.dev/blog/04-filtros-vetores-data-frames/</link>
+      <link>https://dsre.dev/pratica/04-filtros-vetores-data-frames/</link>
       <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://dsre.dev/blog/04-filtros-vetores-data-frames/</guid>
+      <guid>https://dsre.dev/pratica/04-filtros-vetores-data-frames/</guid>
       <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/BOCiRXnRbl8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
       &gt;&lt;/iframe&gt;
@@ -41,9 +41,9 @@
     </item>
     <item>
       <title>Funções de Agregação em Vetores/Data Frames</title>
-      <link>https://dsre.dev/blog/03-funcoes-agregacao/</link>
+      <link>https://dsre.dev/pratica/03-funcoes-agregacao/</link>
       <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://dsre.dev/blog/03-funcoes-agregacao/</guid>
+      <guid>https://dsre.dev/pratica/03-funcoes-agregacao/</guid>
       <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
       &gt;&lt;/iframe&gt;
@@ -55,9 +55,9 @@
     </item>
     <item>
       <title>Dados, vetores e data-frames</title>
-      <link>https://dsre.dev/blog/02-dados-vetores-data-frames/</link>
+      <link>https://dsre.dev/pratica/02-dados-vetores-data-frames/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://dsre.dev/blog/02-dados-vetores-data-frames/</guid>
+      <guid>https://dsre.dev/pratica/02-dados-vetores-data-frames/</guid>
       <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/LC9bbcIzUaE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
       &gt;&lt;/iframe&gt;
@@ -76,9 +76,9 @@
     </item>
     <item>
       <title>Introdução ao R</title>
-      <link>https://dsre.dev/blog/01-introducao-ao-r/</link>
+      <link>https://dsre.dev/pratica/01-introducao-ao-r/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://dsre.dev/blog/01-introducao-ao-r/</guid>
+      <guid>https://dsre.dev/pratica/01-introducao-ao-r/</guid>
       <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qD2hdd5A00I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
       &gt;&lt;/iframe&gt;

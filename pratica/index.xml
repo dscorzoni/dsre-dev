@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>dsre.dev</title>
-    <link>https://dsre.dev/</link>
-    <description>Recent content on dsre.dev</description>
+    <title>Praticas on dsre.dev</title>
+    <link>https://dsre.dev/pratica/</link>
+    <description>Recent content in Praticas on dsre.dev</description>
     <generator>Hugo -- 0.134.2</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 15 Dec 2024 14:12:52 -0300</lastBuildDate>
-    <atom:link href="https://dsre.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>FlashIt! Uma ferramenta para criação rápida de Flashcards</title>
-      <link>https://dsre.dev/blog/02-flashit/</link>
-      <pubDate>Sun, 15 Dec 2024 14:12:52 -0300</pubDate>
-      <guid>https://dsre.dev/blog/02-flashit/</guid>
-      <description>&lt;p&gt;Em meus estudos para concurso me deparei com uma ferramenta antiga que auxilia na memorização de conceitos desde a época de escola. Mais popular nos Estados Unidos do que no Brasil, os flashcards ajudam a memorização através da repetição.&lt;/p&gt;
-&lt;h2 id=&#34;o-que-são-flashcards&#34;&gt;O que são Flashcards?&lt;/h2&gt;
-&lt;p&gt;Os flashcards são comumentes construídos no formato de um cartão com a pergunta em uma face e a resposta no verso. Para o processo de memorização, você vê primeiro a pergunta, tenta acertar a resposta e depois confere no verso do cartão. Essa técnica é muito útil para concursos públicos pois permite você revisitar os cartões múltiplas vezes com uma certa cadência, até que você esteja acertando 100% a resposta daquele cartão. À medida que você acerta, você pode revisitar aquele cartão com menor frequência.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Danilo Scorzoni Ré</title>
-      <link>https://dsre.dev/curriculo/</link>
-      <pubDate>Fri, 15 Nov 2024 13:14:59 -0300</pubDate>
-      <guid>https://dsre.dev/curriculo/</guid>
-      <description>&lt;p&gt;Cientista de Dados generalista, com 12 anos de experiência nas áreas de Tecnologia e Serviços Financeiros. Mestre em Ciência Florestal, Especialista em Inteligência Analítica. Atualmente morando em São Paulo/SP.&lt;/p&gt;
-&lt;h2 id=&#34;experiência&#34;&gt;Experiência&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Meta/Facebook - Research Scientist - Commerce &amp;amp; Business Messaging&lt;/strong&gt;
-&lt;em&gt;(Fevereiro 2020 - Novembro 2023) Nova Iorque/EUA&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Desenvolvimento de estudos analíticos e testes de produto para avaliar o valor de negócio nas plataformas de e-commerce do Instagram, Facebook e WhatsApp. Suporte à estratégia dos times de produto, parcerias, vendas e marketing utilizando testes A/B e métodos de inferência causal.&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dsre.dev/pratica/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Carregando dados do Excel e CSV</title>
       <link>https://dsre.dev/pratica/05-carregando-dados-csv-excel/</link>
@@ -106,37 +86,6 @@
 
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Self-hosting meu web server</title>
-      <link>https://dsre.dev/blog/01-self-hosting/self-hosting/</link>
-      <pubDate>Sat, 14 Sep 2024 14:12:52 -0300</pubDate>
-      <guid>https://dsre.dev/blog/01-self-hosting/self-hosting/</guid>
-      <description>&lt;p&gt;Sou adepto do pensamento de que a melhor forma de aprender é colocando a mão na massa. Por conta disso, e também por conta de algumas coincidências desses últimos dias, decidi aprender um pouco mais sobre como um servidor Apache funciona e hospedar o meu site. Mas antes, vamos a essas coincidências.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Eu sempre quis ter um domínio para hospedar meus projetos, mas nunca cheguei a pagar por um efetivamente. Com o bloqueio do Twitter/X no Brasil, passei a utilizar o Bluesky. Dentro do Bluesky, uma forma de verificação do seu usuário é através de um domínio. Dessa forma, decidi comprar o dsre.dev e passar a ter meu site próprio finalmente.&lt;/li&gt;
-&lt;li&gt;Nessas idas e vindas de redes sociais, tinha já experimentado também o Mastodon, que tem um conceito de descentralização ainda mais forte que o Bluesky. Passei a ler mais a respeito sobre self-hosting e achei interessante a ideia de ter um servidor próprio Apache.&lt;/li&gt;
-&lt;li&gt;Por fim, uma coincidência dos algoritmos, acabei recebendo a recomendação do vídeo abaixo do canal do Sam Meech-Ward sobre como rodar um servidor próprio utilizando o RaspberryPi:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;
-
-    
-    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Vp4glSVPT8o?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
-      &gt;&lt;/iframe&gt;
-    &lt;/div&gt;
- &lt;strong&gt;Sam Meech-Ward&lt;/strong&gt;: Todo desenvolvedor precisa de um RaspberryPi.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Olá,</title>
-      <link>https://dsre.dev/sobre/</link>
-      <pubDate>Thu, 12 Sep 2024 14:14:59 -0300</pubDate>
-      <guid>https://dsre.dev/sobre/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Olá!&#34; loading=&#34;lazy&#34; src=&#34;https://dsre.dev/sobre/danilo_coliseu.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Me chamo &lt;strong&gt;Danilo Scorzoni Ré&lt;/strong&gt; e esse é o meu portfolio de projetos e site pessoal.&lt;/p&gt;
-&lt;p&gt;Aqui você irá encontrar algumas informações sobre mim, minha experiência profissional, tecnologias que domino e alguns dos meus projetos.&lt;/p&gt;
-&lt;h2 id=&#34;cientista-de-dados&#34;&gt;Cientista de Dados&lt;/h2&gt;
-&lt;p&gt;Sou engenheiro florestal por formação mas atuo há mais de 12 anos na área de Ciência de Dados nos ramos de tecnologia e serviços financeiros. Passei por empresas como Serasa Experian, Facebook e Instagram, no Brasil e nos Estados Unidos.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
